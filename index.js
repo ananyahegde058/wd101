@@ -63,8 +63,8 @@ function displayEntries(){
                 <th>Name</th>
                 <th>Email</th>
                 <th>Password</th>
-                <th>dob</th>
-                <th>Accept terms?</th>
+                <th>Dob</th>
+                <th>Accepted terms?</th>
                 </tr>
             </thead>
             <tbody>
@@ -87,10 +87,17 @@ function saveForm(event){
     const acceptTerms = document.getElementById("accept").checked;
     
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
+const emailError = document.getElementById("email-error");
+
+if (!emailPattern.test(email)) {
+  emailInput.setCustomValidity("Please enter a valid email address.");
+  emailError.textContent = emailInput.validationMessage;
+  emailInput.reportValidity(); 
+  return;
+} else {
+  emailInput.setCustomValidity("");
+  emailError.textContent = "";
+}
   
     const dob=new Date(date);
     const today=new Date();
