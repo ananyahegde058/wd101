@@ -50,7 +50,7 @@ function displayEntries(){
             <td>${entry.name}</td>
             <td>${entry.email}</td>
             <td>${entry.password}</td>
-            <td>${entry.dob}</td>
+            <td>${entry.date}</td>
            <td>${entry.acceptTerms}</td>
             </tr>
         `;
@@ -63,7 +63,7 @@ function displayEntries(){
                 <th>Name</th>
                 <th>Email</th>
                 <th>Password</th>
-                <th>Date of Birth</th>
+                <th>dob</th>
                 <th>Accept terms?</th>
                 </tr>
             </thead>
